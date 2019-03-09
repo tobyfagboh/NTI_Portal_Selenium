@@ -3,9 +3,9 @@ package com.w2a.utilities;
 public class TestConfig {
 	
 	public static String server="smtp.gmail.com";
-	public static String from = "vaffaproject@gmail.com";
+	public static String from = "tfagbohungbe@gmail.com";
 	public static String password = "Selenium@123";
-	public static String[] to ={"seleniumcoaching@gmail.com","trainer@way2automation.com"};
+	public static String[] to ={"figbo4real@yahoo.com","trainer@way2automation.com"};
 	public static String subject = "Extent Project Report";
 	
 	public static String messageBody ="TestMessage";

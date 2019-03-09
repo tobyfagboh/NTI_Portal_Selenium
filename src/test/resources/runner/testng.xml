@@ -5,19 +5,20 @@
 	<listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter"/>
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
-		<listener class-name="com.w2a.listeners.CustomListeners"/>
 	</listeners>
 
-  <test thread-count="5" name="LoginTest">
+ <test thread-count="1" name="Invalid Email Login">
     <classes>
-      <class name="com.w2a.testcase.LoginTest"/>
+      <class name="com.w2a.testcase.InvalidEmailLogin"/>
     </classes>
   </test> <!-- Test -->
   
-  <test name="Add Admin">
+   <test thread-count="2" name="Invalid Password">
     <classes>
-      <class name="com.w2a.testcase.addAdmin"/>
+      <class name="com.w2a.testcase.InvalidPassword"/>
     </classes>
-  </test>
+  </test> <!-- Test -->
+  
+
   
 </suite> <!-- Suite -->

@@ -4,12 +4,14 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import com.w2a.base.TestBase;
 
-public class testlogin extends TestBase {
-
+@SuppressWarnings("unused")
+public class LoginTest extends TestBase{
+	
 	@Test
 	public void loginAsAdnin() throws InterruptedException, IOException {
 		
@@ -25,4 +27,5 @@ public class testlogin extends TestBase {
 		log.debug("Log in successfully executed");
 		//Assert.fail("Login not successful");
 	}
+
 }

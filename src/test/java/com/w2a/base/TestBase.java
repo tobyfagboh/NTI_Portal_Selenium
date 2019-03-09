@@ -130,7 +130,7 @@ public class TestBase {
 			driver.findElement(By.linkText(OR.getProperty(Locator))).click();
 		}
 			  
-		test.log(LogStatus.INFO, "Clicking on : "+Locator);
+		//test.log(LogStatus.INFO, "Clicking on : "+Locator);
 	}
 	
 	public void type(String Locator, String value) {
