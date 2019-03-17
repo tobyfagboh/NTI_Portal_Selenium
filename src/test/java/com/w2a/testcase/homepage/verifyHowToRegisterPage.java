@@ -17,6 +17,7 @@ public class verifyHowToRegisterPage extends TestBase {
 		click("howToRegisterBtn_XPATH");
 		Thread.sleep(3000);
 		driver.navigate().back();
+		
 	}
 
 }
