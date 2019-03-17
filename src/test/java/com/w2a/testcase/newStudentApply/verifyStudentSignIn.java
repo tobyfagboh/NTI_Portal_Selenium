@@ -19,13 +19,13 @@ public class verifyStudentSignIn {
 		//	Thread.sleep(3000);
 			
 			click("newStudentsApply_XPATH");
-			Thread.sleep(3000);
+			
 			
 			click("continueApplicationBtn_XPATH");
-			Thread.sleep(3000);
+		
 			
 			driver.findElement(By.name(OR.getProperty("emailAddressField_CLASSNAME"))).sendKeys(OR.getProperty("emailAddress_TEXT"));
-			Thread.sleep(3000);
+			
 			
 			driver.findElement(By.xpath(OR.getProperty("passwordField_XPATH"))).sendKeys(OR.getProperty("studentPassword_TEXT"));
 			Thread.sleep(3000);
