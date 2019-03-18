@@ -15,32 +15,29 @@ import com.w2a.base.TestBase;
 			
 			click("selectProgrammeField_XPATH");
 			click("bachelorsDegreeSelected_XPATH");	
-			Thread.sleep(2000);
 			
 			click("programmeEntryLevelField");	
 			click("100LevelSelected_XPATH");	
-			Thread.sleep(2000);
 			
-			click("1stChoiceCourse_CLASSNAME");
+			click("1stChoiceCourse_XPATH");
 			click("1stChoiceCourseSelected_XPATH");	
-			Thread.sleep(2000);
 			
 			click("2ndChoiceCourse_XPATH");	
 			click("2ndChoiceCourseSelected_XPATH");	
-			Thread.sleep(2000);
 			
 			click("stateOfResidence_XPATH");	
 			click("selectedStateOfResidence_XPATH");	
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			
 			click("studyCentre_XPATH");	
 			click("selectedStudyCentre_XPATH");	
 			Thread.sleep(2000);
 			
-			click("continueBtnXpath_XPATH");	
-		//	Assert.assertTrue(isElementPresent(By.xpath(OR.getProperty("adminDashboard_XPATH"))), "Unable to validate Homepage");
+			click("continueBtnXpath_XPATH");
+			Thread.sleep(3000);
 			
-		//	log.debug("Log in successfully executed");
+			click("payBtn_XPATH");
+			Thread.sleep(4000);
 			
 		}
 	}
