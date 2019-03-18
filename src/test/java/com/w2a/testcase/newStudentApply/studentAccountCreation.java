@@ -49,10 +49,7 @@ public class studentAccountCreation {
 				
 				click("okaySubmitFormBtn_XPATH");	
 				Thread.sleep(4000);
-			//	Assert.assertTrue(isElementPresent(By.xpath(OR.getProperty("adminDashboard_XPATH"))), "Unable to validate Homepage");
-				
-				//log.debug("Log in successfully executed");
-				
+
 			}
 		}
 
