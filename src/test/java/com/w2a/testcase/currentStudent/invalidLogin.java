@@ -13,7 +13,7 @@ public class invalidLogin extends TestBase {
 	@Test
 	public void Login () throws InterruptedException  {
 		
-		log.debug("Log in page Executed");
+		log.debug("Invalid Log in page Executed");
 		Thread.sleep(3000);
 		click("currentStudentReg_XPATH");
 		Thread.sleep(3000);
@@ -25,7 +25,7 @@ public class invalidLogin extends TestBase {
 		
 		Assert.assertTrue(isElementPresent(By.xpath(OR.getProperty("studentDashboard_XPATH"))), "Unable to validate Homepage");
 		
-		log.debug("Log in successfully executed");
+		log.debug("Invalid Log in successfully executed");
 		
 	}
 

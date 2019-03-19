@@ -14,13 +14,13 @@ public class validLogin extends TestBase {
 	public void Login () throws InterruptedException  {
 		
 		log.debug("Log in page Executed");
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		click("currentStudentReg_XPATH");
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		driver.findElement(By.name(OR.getProperty("email_CLASSNAME"))).sendKeys(OR.getProperty("email_TEXT"));
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		driver.findElement(By.xpath(OR.getProperty("password_XPATH"))).sendKeys(OR.getProperty("password_TEXT"));
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		click("signInBtn_XPATH");		
 		
 		Assert.assertTrue(isElementPresent(By.xpath(OR.getProperty("studentDashboard_XPATH"))), "Unable to validate Homepage");
