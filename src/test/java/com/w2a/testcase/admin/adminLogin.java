@@ -12,14 +12,13 @@ package com.w2a.testcase.admin;
 			Properties properties;
 				@Test
 				public void AdminLogin () throws InterruptedException  {
-			
-					driver.findElement(By.name(OR.getProperty("emailField_CLASSNAME"))).sendKeys(OR.getProperty("email_TEXT"));
 					
-					driver.findElement(By.id(OR.getProperty("passwordField_ID"))).sendKeys(OR.getProperty("passwordField_TEXT"));
-					
+					click("currentStudentReg_XPATH");
+					Thread.sleep(2000);
+					driver.findElement(By.name(OR.getProperty("emailField_CLASSNAME"))).sendKeys(OR.getProperty("emailField_TEXT"));
+					driver.findElement(By.name(OR.getProperty("passwordField_CLASSNAME"))).sendKeys(OR.getProperty("passwordField_TEXT"));
 				    click("logInBtn_XPATH");	
 				    Thread.sleep(3000);
-
 				}
 		}
 				
