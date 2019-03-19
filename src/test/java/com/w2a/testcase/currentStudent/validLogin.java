@@ -23,7 +23,7 @@ public class validLogin extends TestBase {
 		Thread.sleep(3000);
 		click("signInBtn_XPATH");		
 		
-		Assert.assertTrue(isElementPresent(By.xpath(OR.getProperty("adminDashboard_XPATH"))), "Unable to validate Homepage");
+		Assert.assertTrue(isElementPresent(By.xpath(OR.getProperty("studentDashboard_XPATH"))), "Unable to validate Homepage");
 		
 		log.debug("Log in successfully executed");
 		
