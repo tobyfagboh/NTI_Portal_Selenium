@@ -49,35 +49,7 @@ public class studentAccountCreation {
 				
 				click("okaySubmitFormBtn_XPATH");	
 				Thread.sleep(4000);
-				
-				click("selectProgrammeField_XPATH");
-				click("bachelorsDegreeSelected_XPATH");	
-				Thread.sleep(2000);
-				
-				click("programmeEntryLevelField");	
-				click("100LevelSelected_XPATH");	
-				Thread.sleep(2000);
-				
-				click("1stChoiceCourse_XPATH");
-				click("1stChoiceCourseSelected_XPATH");	
-				Thread.sleep(2000);
-				
-				click("2ndChoiceCourse_XPATH");	
-				click("2ndChoiceCourseSelected_XPATH");	
-				Thread.sleep(2000);
-				
-				click("stateOfResidence_XPATH");	
-				click("selectedStateOfResidence_XPATH");	
-				Thread.sleep(2000);
-				
-				click("studyCentre_XPATH");	
-				click("selectedStudyCentre_XPATH");	
-				Thread.sleep(2000);
-				
-				click("continueBtnXpath_XPATH");	
-				
-				click("payBtn_XPATH");
-			
+
 			}
 		}
 
