@@ -14,12 +14,11 @@ import com.w2a.base.TestBase;
 		
 				log.debug("Log in page Executed");
 				Thread.sleep(3000);
-				click("howToApplyBtn_XPATH");
+				click("howToApplyPageBtn_XPATH");
 				Thread.sleep(3000);
 				driver.navigate().back();
 				Thread.sleep(3000);
 				driver.quit();
-
 		
 	}
 }
