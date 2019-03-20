@@ -19,6 +19,5 @@ import com.w2a.base.TestBase;
 				driver.navigate().back();
 				Thread.sleep(3000);
 				driver.quit();
-		
 	}
 }
