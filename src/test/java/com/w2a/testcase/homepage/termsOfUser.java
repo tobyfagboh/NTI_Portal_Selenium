@@ -5,7 +5,6 @@ import com.w2a.base.TestBase;
 
 		public class termsOfUser extends TestBase {
 			Properties properties;
-	
 			@Test
 			public void verifyTermsOfUser () throws InterruptedException  {
 		
