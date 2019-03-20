@@ -1,9 +1,6 @@
 package com.w2a.testcase.homepage;
-
 import java.util.Properties;
-
 import org.testng.annotations.Test;
-
 import com.w2a.base.TestBase;
 
 		public class termsOfUser extends TestBase {
