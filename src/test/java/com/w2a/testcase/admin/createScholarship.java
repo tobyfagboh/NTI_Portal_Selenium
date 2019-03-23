@@ -11,8 +11,11 @@ public class createScholarship extends TestBase {
 	@Test
 	public void CreateScholarship () throws InterruptedException {
 
+		click("currentStudentReg_XPATH");
+		Thread.sleep(2000);
+		
 		driver.findElement(By.name(OR.getProperty("emailField_CLASSNAME"))).sendKeys(OR.getProperty("email_TEXT"));	
-		driver.findElement(By.id(OR.getProperty("passwordField_ID"))).sendKeys(OR.getProperty("passwordField_TEXT"));
+		driver.findElement(By.name(OR.getProperty("passwordField_CLASSNAME"))).sendKeys(OR.getProperty("passwordField_TEXT"));
 		
 	    click("logInBtn_XPATH");	
 	    Thread.sleep(3000);
