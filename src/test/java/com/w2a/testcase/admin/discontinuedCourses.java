@@ -10,7 +10,7 @@ package com.w2a.testcase.admin;
 		public	class discontinuedCourses extends TestBase {
 			Properties properties;
 				@Test
-				public void CreateCourse () throws InterruptedException  {
+				public void DiscontinuedCourses () throws InterruptedException  {
 				
 					click("currentStudentReg_XPATH");
 					Thread.sleep(2000);
