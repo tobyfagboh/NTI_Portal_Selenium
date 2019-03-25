@@ -45,7 +45,6 @@ public class createScholarship extends TestBase {
 		driver.findElement(By.id(OR.getProperty("description_ID"))).sendKeys(OR.getProperty("description_TEXT"));
 		
 		click("saveBtn_XPATH");
-		
 	}
 }
 	
