@@ -43,7 +43,7 @@ public class createScholarship extends TestBase {
 		driver.findElement(By.xpath(OR.getProperty("noOfBeneficiary_XPATH"))).sendKeys(OR.getProperty("beneficiary_TEXT"));	
 		driver.findElement(By.id(OR.getProperty("amount_ID"))).sendKeys(OR.getProperty("amount_TEXT"));
 		driver.findElement(By.id(OR.getProperty("description_ID"))).sendKeys(OR.getProperty("description_TEXT"));
-		
+	
 		click("saveBtn_ID");
 		
 	}
