@@ -13,8 +13,8 @@ public class approveApplicant  extends TestBase  {
 		click("currentStudentReg_XPATH");
 		Thread.sleep(2000);
 		
-	    driver.findElement(By.name(OR.getProperty("emailField_CLASSNAME"))).sendKeys(OR.getProperty("email_TEXT"));	
-		driver.findElement(By.name(OR.getProperty("passwordField_CLASSNAME"))).sendKeys(OR.getProperty("passwordField_TEXT"));
+	    driver.findElement(By.name(OR.getProperty("emailFieldApprove_CLASSNAME"))).sendKeys(OR.getProperty("emailFieldApprove_TEXT"));	
+		driver.findElement(By.name(OR.getProperty("passwordFieldApprove_CLASSNAME"))).sendKeys(OR.getProperty("passwordFieldApprove_TEXT"));
 		click("logInBtn_XPATH");
 		Thread.sleep(2000);
 		
