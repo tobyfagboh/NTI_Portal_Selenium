@@ -17,9 +17,9 @@ public class validLogin extends TestBase {
 		//Thread.sleep(3000);
 		click("currentStudentReg_XPATH");
 		//Thread.sleep(3000);
-		driver.findElement(By.name(OR.getProperty("email_CLASSNAME"))).sendKeys(OR.getProperty("email_TEXT"));
+		driver.findElement(By.name(OR.getProperty("studentemail_CLASSNAME"))).sendKeys(OR.getProperty("studentemail_TEXT"));
 		//Thread.sleep(3000);
-		driver.findElement(By.xpath(OR.getProperty("password_XPATH"))).sendKeys(OR.getProperty("password_TEXT"));
+		driver.findElement(By.xpath(OR.getProperty("studentpassword_XPATH"))).sendKeys(OR.getProperty("studentpassword_TEXT"));
 		//Thread.sleep(3000);
 		click("signInBtn_XPATH");		
 		
