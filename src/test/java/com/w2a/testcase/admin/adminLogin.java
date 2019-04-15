@@ -15,10 +15,11 @@ package com.w2a.testcase.admin;
 					
 					click("currentStudentReg_XPATH");
 					Thread.sleep(2000);
-					driver.findElement(By.name(OR.getProperty("emailField_CLASSNAME"))).sendKeys(OR.getProperty("emailField_TEXT"));
-					driver.findElement(By.name(OR.getProperty("passwordField_CLASSNAME"))).sendKeys(OR.getProperty("passwordField_TEXT"));
+					driver.findElement(By.name(OR.getProperty("adminEmailField_CLASSNAME"))).sendKeys(OR.getProperty("adminEmailField_TEXT"));
+					driver.findElement(By.name(OR.getProperty("adminPasswordField_CLASSNAME"))).sendKeys(OR.getProperty("adminPasswordField_TEXT"));
 				    click("logInBtn_XPATH");	
 				    Thread.sleep(3000);
+				    driver.quit();
 				}
 		}
 				
