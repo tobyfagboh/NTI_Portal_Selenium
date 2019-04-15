@@ -12,13 +12,5 @@
       <class name="com.w2a.testcase.currentStudent.CurrentStudent"/>
     </classes>
   </test> <!-- Test -->
-  
-   <test thread-count="2" name="Invalid Password">
-    <classes>
-      <class name="com.w2a.testcase.InvalidPassword"/>
-    </classes>
-  </test> <!-- Test -->
-  
-
-  
+    
 </suite> <!-- Suite -->
