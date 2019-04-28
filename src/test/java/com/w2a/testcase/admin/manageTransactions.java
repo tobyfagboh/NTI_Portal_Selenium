@@ -21,6 +21,7 @@ package com.w2a.testcase.admin;
 				    
 				    click("feesBtn_XPATH");
 				    click("manageTransactionsBtn_XPATH");
+				    Thread.sleep(2000);
 				    
 				    
 				    

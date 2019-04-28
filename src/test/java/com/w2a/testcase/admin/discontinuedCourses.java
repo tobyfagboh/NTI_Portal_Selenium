@@ -21,6 +21,7 @@ package com.w2a.testcase.admin;
 				    
 				    click("coursesBtn_XPATH");
 				    click("discontinuedCoursesBtn_XPATH");
+				    Thread.sleep(2000);
 				    
 				}
 
