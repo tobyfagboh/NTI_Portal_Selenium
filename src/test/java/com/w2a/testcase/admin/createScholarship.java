@@ -14,11 +14,9 @@ public class createScholarship extends TestBase {
 		click("currentStudentReg_XPATH");
 		Thread.sleep(2000);
 		
-		driver.findElement(By.name(OR.getProperty("emailField_CLASSNAME"))).sendKeys(OR.getProperty("email_TEXT"));	
+		driver.findElement(By.name(OR.getProperty("emailField_CLASSNAME"))).sendKeys(OR.getProperty("emailField_TEXT"));
 		driver.findElement(By.name(OR.getProperty("passwordField_CLASSNAME"))).sendKeys(OR.getProperty("passwordField_TEXT"));
-		
 	    click("logInBtn_XPATH");	
-	    Thread.sleep(3000);
 	    
 	    click("scholarshipBtn_XPATH");
 	    Thread.sleep(2000);
@@ -45,6 +43,7 @@ public class createScholarship extends TestBase {
 		driver.findElement(By.id(OR.getProperty("description_ID"))).sendKeys(OR.getProperty("description_TEXT"));
 		
 		click("saveBtn_XPATH");
+		Thread.sleep(3000);
 		
 	}
 }
