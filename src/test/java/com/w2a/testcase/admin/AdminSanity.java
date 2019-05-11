@@ -2,6 +2,7 @@ package com.w2a.testcase.admin;
 
 import java.util.Properties;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
@@ -53,6 +54,8 @@ import com.w2a.base.TestBase;
         click("status_XPATH");
         click("active_XPATH");
         click("createNewCourseBtn_XPATH");	
+        click("profileName_XPATH");
+	    click("adminLogOut_XPATH");
 		
 	}
 
@@ -89,8 +92,15 @@ import com.w2a.base.TestBase;
 	    driver.findElement(By.xpath(OR.getProperty("installment2Field_XPATH"))).sendKeys(OR.getProperty("installment2Field_TEXT"));
 	    driver.findElement(By.xpath(OR.getProperty("descriptionField_XPATH"))).sendKeys(OR.getProperty("descriptionField_TEXT"));
 	    click("saveBtn_XPATH");
+	    Thread.sleep(3000); 
+		
+	    Alert alert = driver.switchTo().alert();
+	    alert.accept();
+	    		
 	    
-	    Thread.sleep(3000);   
+	     
+	    click("profileName_XPATH");
+	    click("adminLogOut_XPATH");
 	}
 
 	
@@ -120,9 +130,9 @@ import com.w2a.base.TestBase;
 		driver.findElement(By.name(OR.getProperty("payerPhone_CLASSNAME"))).sendKeys(OR.getProperty("payerPhone_TEXT"));
 		
 		click("selectFeeType_XPATH");
-		click("selectedType_XPATH");
+		click("selectedTypeOfFee_XPATH");
 		
-		click("semesterField_XPATH");
+		click("semestField_XPATH");
 		click("selectedSemester_XPATH");
 		
 		driver.findElement(By.xpath(OR.getProperty("noOfBeneficiary_XPATH"))).sendKeys(OR.getProperty("beneficiary_TEXT"));	
@@ -131,6 +141,8 @@ import com.w2a.base.TestBase;
 	
 		click("saveBtn_ID");
 		Thread.sleep(3000);
+		   click("profileName_XPATH");
+		    click("adminLogOut_XPATH");
 	}
 	
 	@Test (priority=5)
@@ -147,6 +159,8 @@ import com.w2a.base.TestBase;
 	    click("coursesBtn_XPATH");
 	    click("discontinuedCoursesBtn_XPATH");
 	    Thread.sleep(3000);
+	    click("profileName_XPATH");
+	    click("adminLogOut_XPATH");
 }
 	
 	@Test (priority=6)
@@ -162,6 +176,8 @@ import com.w2a.base.TestBase;
 	  click("feesBtn_XPATH");
 	  click("manageTransactionsBtn_XPATH");
 	  Thread.sleep(3000);
+	   click("profileName_XPATH");
+	    click("adminLogOut_XPATH");
 }
 	
 	}
