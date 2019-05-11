@@ -2,7 +2,8 @@ package com.w2a.testcase.admin;
 
 	import java.util.Properties;
 
-	import org.openqa.selenium.By;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 	import org.testng.annotations.Test;
 
 	import com.w2a.base.TestBase;
@@ -14,11 +15,11 @@ package com.w2a.testcase.admin;
 				
 					click("currentStudentReg_XPATH");
 					Thread.sleep(2000);
-					driver.findElement(By.name(OR.getProperty("emailField_CLASSNAME"))).sendKeys(OR.getProperty("emailField_TEXT"));
-					driver.findElement(By.name(OR.getProperty("passwordField_CLASSNAME"))).sendKeys(OR.getProperty("passwordField_TEXT"));
+					driver.findElement(By.name(OR.getProperty("adminEmailField_CLASSNAME"))).sendKeys(OR.getProperty("adminEmailField_TEXT"));
+					driver.findElement(By.name(OR.getProperty("adminPasswordField_CLASSNAME"))).sendKeys(OR.getProperty("adminPasswordField_TEXT"));
 				    click("logInBtn_XPATH");	
 				    Thread.sleep(2000);
-				    
+
 				    click("feesBtn_XPATH");
 				    click("feeAssignmentBtn_XPATH");
 				    click("createFeeAssignmentBtn_XPATH");
@@ -40,15 +41,15 @@ package com.w2a.testcase.admin;
 				    driver.findElement(By.xpath(OR.getProperty("installment2Field_XPATH"))).sendKeys(OR.getProperty("installment2Field_TEXT"));
 				    driver.findElement(By.xpath(OR.getProperty("descriptionField_XPATH"))).sendKeys(OR.getProperty("descriptionField_TEXT"));
 				    click("saveBtn_XPATH");
-				    
-				    Thread.sleep(3000);
-				    
+				    Thread.sleep(3000); 
+					
+				    Alert alert = driver.switchTo().alert();
+				    alert.accept();				     
+				    click("profileName_XPATH");
+				    click("adminLogOut_XPATH");
 				}
 
 }
-
-
-
 
 
 

@@ -2,9 +2,9 @@ package com.w2a.testcase.admin;
 
 import java.util.Properties;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-
 import com.w2a.base.TestBase;
 
 	public class AdminSanity extends TestBase{
@@ -22,7 +22,6 @@ import com.w2a.base.TestBase;
 	    click("profileName_XPATH");
 	    click("adminLogOut_XPATH");
 	}
-	
 	
 	@Test (priority=2)
 	public void CreateCourse () throws InterruptedException  {
@@ -53,10 +52,10 @@ import com.w2a.base.TestBase;
         click("status_XPATH");
         click("active_XPATH");
         click("createNewCourseBtn_XPATH");	
-		
+        click("profileName_XPATH");
+	    click("adminLogOut_XPATH");	
 	}
 
-	
 	@Test (priority=3)
 	public void CreateFeeAssignment () throws InterruptedException  {
 		
@@ -66,7 +65,6 @@ import com.w2a.base.TestBase;
 		driver.findElement(By.name(OR.getProperty("adminPasswordField_CLASSNAME"))).sendKeys(OR.getProperty("adminPasswordField_TEXT"));
 	    click("logInBtn_XPATH");	
 	    Thread.sleep(2000);
-
 	    
 	    click("feesBtn_XPATH");
 	    click("feeAssignmentBtn_XPATH");
@@ -89,11 +87,13 @@ import com.w2a.base.TestBase;
 	    driver.findElement(By.xpath(OR.getProperty("installment2Field_XPATH"))).sendKeys(OR.getProperty("installment2Field_TEXT"));
 	    driver.findElement(By.xpath(OR.getProperty("descriptionField_XPATH"))).sendKeys(OR.getProperty("descriptionField_TEXT"));
 	    click("saveBtn_XPATH");
-	    
-	    Thread.sleep(3000);   
+	    Thread.sleep(3000); 
+	    Alert alert = driver.switchTo().alert();
+	    alert.accept();
+	    click("profileName_XPATH");
+	    click("adminLogOut_XPATH");
 	}
 
-	
 	@Test (priority=4)
 	public void CreateScholarship () throws InterruptedException {
 
@@ -102,35 +102,29 @@ import com.w2a.base.TestBase;
 		driver.findElement(By.name(OR.getProperty("adminEmailField_CLASSNAME"))).sendKeys(OR.getProperty("adminEmailField_TEXT"));
 		driver.findElement(By.name(OR.getProperty("adminPasswordField_CLASSNAME"))).sendKeys(OR.getProperty("adminPasswordField_TEXT"));
 	    click("logInBtn_XPATH");	
-	    Thread.sleep(2000);
-
-	    
+	    Thread.sleep(2000);	    
 	    click("scholarshipBtn_XPATH");
 	    Thread.sleep(2000);
 	    
 	    click("createScholarshipBtn_XPATH");
 	    Thread.sleep(2000);
-	    
 	    click("scholarshipType_XPATH");
 	    click("studentSelected_XPATH");
-	    
 	    driver.findElement(By.id(OR.getProperty("titleField_ID"))).sendKeys(OR.getProperty("titleField_TEXT"));	
 		driver.findElement(By.id(OR.getProperty("payerNameField_ID"))).sendKeys(OR.getProperty("payerName_TEXT"));
 	    driver.findElement(By.xpath(OR.getProperty("payerEmail_XPATH"))).sendKeys(OR.getProperty("payerEmail_TEXT"));	
 		driver.findElement(By.name(OR.getProperty("payerPhone_CLASSNAME"))).sendKeys(OR.getProperty("payerPhone_TEXT"));
-		
 		click("selectFeeType_XPATH");
-		click("selectedType_XPATH");
-		
-		click("semesterField_XPATH");
+		click("selectedTypeOfFee_XPATH");
+		click("semestField_XPATH");
 		click("selectedSemester_XPATH");
-		
 		driver.findElement(By.xpath(OR.getProperty("noOfBeneficiary_XPATH"))).sendKeys(OR.getProperty("beneficiary_TEXT"));	
 		driver.findElement(By.id(OR.getProperty("amount_ID"))).sendKeys(OR.getProperty("amount_TEXT"));
 		driver.findElement(By.id(OR.getProperty("description_ID"))).sendKeys(OR.getProperty("description_TEXT"));
-	
 		click("saveBtn_ID");
 		Thread.sleep(3000);
+		click("profileName_XPATH");
+		click("adminLogOut_XPATH");
 	}
 	
 	@Test (priority=5)
@@ -143,10 +137,11 @@ import com.w2a.base.TestBase;
 	    click("logInBtn_XPATH");	
 	    Thread.sleep(2000);
 
-	    
 	    click("coursesBtn_XPATH");
 	    click("discontinuedCoursesBtn_XPATH");
 	    Thread.sleep(3000);
+	    click("profileName_XPATH");
+	    click("adminLogOut_XPATH");
 }
 	
 	@Test (priority=6)
@@ -162,7 +157,8 @@ import com.w2a.base.TestBase;
 	  click("feesBtn_XPATH");
 	  click("manageTransactionsBtn_XPATH");
 	  Thread.sleep(3000);
-}
-	
+	   click("profileName_XPATH");
+	    click("adminLogOut_XPATH");
+	    }
 	}
 
