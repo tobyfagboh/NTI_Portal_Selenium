@@ -41,12 +41,12 @@ public class TestBase {
 	public ExtentReports rep = ExtentManager.getInstance();
 	public static ExtentTest test;
 	public static String browser;
-	
+
 	@BeforeSuite
 	public void setUp () {
-		
+
 		if (driver==null) {
-			
+
 			try {
 				fis = new FileInputStream (System.getProperty("user.dir") + "\\src\\test\\resources\\properties\\Config.properties");
 				System.out.println("System Path :: " + System.getProperty("user.dir") + "\\src\\test\\resources\\excel\\testdata.xlsx");
@@ -61,7 +61,7 @@ public class TestBase {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			
+
 			try {
 				fis = new FileInputStream (System.getProperty("user.dir") + "\\src\\test\\resources\\properties\\OR.properties");
 			} catch (FileNotFoundException e) {
@@ -75,48 +75,48 @@ public class TestBase {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			
+
+
 			//Parameterizing build browser 
-	if(System.getenv("browser")!=null && System.getenv("browser").isEmpty()) {
-				
+			if(System.getenv("browser")!=null && System.getenv("browser").isEmpty()) {
+
 				browser = System.getenv("browser");
-				
+
 			}else {
-				
+
 				browser = config.getProperty("browser");
-				
+
 			}
-			
+
 			config.setProperty("browser", browser);
-				
-			
-			
+
+
+
 			if(config.getProperty("browser").equals("firefox")) {
-				
+
 				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\geckodriver.exe");
 				driver = new FirefoxDriver();
 				log.debug("Firefox launched !!!");
 			}else if (config.getProperty("browser").equals("chrome")) {
-				
+
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
 				driver = new ChromeDriver();
 				log.debug("Chrome Launched !!!");
 			}else if (config.getProperty("browser").equals("ie")) {
-				
+
 				System.setProperty("webdriver.ie.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\iedriver.exe");
 				driver = new InternetExplorerDriver();
 			}
-		
+
 			driver.get(config.getProperty("testsiteurl"));
 			log.debug("Navigated to : " +config.getProperty("testsiteurl"));
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicit.wait")), TimeUnit.SECONDS);
 		}
-		
-		
+
+
 	}
-	
+
 	public void click(String Locator) {
 		if (Locator.endsWith("_CSS")) {
 			driver.findElement(By.cssSelector(OR.getProperty(Locator))).click();
@@ -129,14 +129,14 @@ public class TestBase {
 		}else if (Locator.endsWith("_LINKTEXT")) {
 			driver.findElement(By.linkText(OR.getProperty(Locator))).click();
 		}
-			  
+
 		//test.log(LogStatus.INFO, "Clicking on : "+Locator);
 	}
-	
+
 	public void type(String Locator, String value) {
-		
+
 		if (Locator.endsWith("_CSS")) {
-		driver.findElement(By.cssSelector(OR.getProperty(Locator))).sendKeys(value);
+			driver.findElement(By.cssSelector(OR.getProperty(Locator))).sendKeys(value);
 		}else if (Locator.endsWith("_ID")) {
 			driver.findElement(By.id(OR.getProperty(Locator))).sendKeys(value);
 		}else if (Locator.endsWith("_XPATH")) {
@@ -146,14 +146,14 @@ public class TestBase {
 		}else if (Locator.endsWith("_LINKTEXT")){
 			driver.findElement(By.linkText(OR.getProperty(Locator))).sendKeys(value);
 		}
-		
+
 		test.log(LogStatus.INFO, "Typing in on : "+Locator+" entered value as "+value);
 	}
-	
+
 	static WebElement dropdown;
-	
+
 	public void select (String Locator, String value) {
-		
+
 		if (Locator.endsWith("_CSS")) {
 			dropdown = driver.findElement(By.cssSelector(OR.getProperty(Locator)));
 		}else if (Locator.endsWith("_XPATH")) {
@@ -165,37 +165,37 @@ public class TestBase {
 		}else if (Locator.endsWith("_LINKTEXT")) {
 			dropdown = driver.findElement(By.linkText(OR.getProperty(Locator)));
 		}
-		
+
 		Select select = new Select (dropdown);
 		select.selectByVisibleText(value);
 		test.log(LogStatus.INFO, "Selecting from dropdown : "+ Locator + " value as " + value);
 	}
-	
-	
+
+
 	public boolean isElementPresent(By by) {
-		
+
 		try {
-			
+
 			driver.findElement(by);
 			return true;
-			
+
 		}catch(NoSuchElementException e) {
-			
+
 			return false;
-			
+
 		}
-		
+
 	}
-	
-	
+
+
 	public static void verifyEquals(String expected,String actual) throws IOException {
-		
+
 		try {
-			
+
 			Assert.assertEquals(actual, expected);
-			
+
 		}catch(Throwable t) {
-			
+
 			TestUtil.captureScreenshot();
 			//ReportNG
 			Reporter.log("<br>"+"Verification failure : "+t.getMessage () +"<br>");
@@ -204,20 +204,20 @@ public class TestBase {
 			//ExtentReport
 			test.log(LogStatus.FAIL, "Verification failed with exception : "+ "Failed with exception : "+t.getMessage ());
 			test.log(LogStatus.FAIL, test.addScreenCapture(TestUtil.screenshotName));
-			
-			
+
+
 		}
 	}
-	
-	
-	
+
+
+
 	@AfterSuite
 	public void tearDown () {
-		
+
 		if(driver!=null) {
-		driver.quit();
-		
-		log.debug("Test Execution Completed");
+			driver.quit();
+
+			log.debug("Test Execution Completed");
 		}
 	}
 }
